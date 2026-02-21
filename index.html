@@ -1,69 +1,424 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Telluna | Consultoria Empresarial Estratégica</title>
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #0F2E2A;
-    color: white;
-    text-align: center;
-}
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 80px 20px;
-}
-h1 {
-    font-size: 36px;
-}
-.highlight {
-    color: #C6A85A;
-}
-p {
-    font-size: 18px;
-    line-height: 1.6;
-    margin-top: 20px;
-}
-.button {
-    margin-top: 40px;
-}
-a {
-    text-decoration: none;
-    background-color: #C6A85A;
-    color: #0F2E2A;
-    padding: 15px 30px;
-    border-radius: 5px;
-    font-weight: bold;
-}
-.footer {
-    margin-top: 80px;
-    font-size: 14px;
-    opacity: 0.6;
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Telluna | Consultoria Empresarial Estratégica</title>
+  <meta name="description" content="Consultoria empresarial estratégica para PMEs: estrutura, direção e decisões para crescer com previsibilidade." />
+
+  <style>
+    :root{
+      --bg:#0B2522;         /* verde premium */
+      --bg2:#0F2E2A;        /* verde alternativo */
+      --card:#0f2f2b;       /* card escuro */
+      --paper:#f3efe6;      /* off-white elegante */
+      --text:#e9efe9;       /* texto claro */
+      --muted:#b9c7bf;      /* texto secundário */
+      --gold:#C6A85A;       /* dourado */
+      --line: rgba(233,239,233,.14);
+      --shadow: 0 18px 50px rgba(0,0,0,.35);
+      --radius: 22px;
+      --radius2: 16px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background:
+        radial-gradient(900px 500px at 15% 15%, rgba(198,168,90,.15), transparent 55%),
+        radial-gradient(900px 500px at 85% 10%, rgba(233,239,233,.08), transparent 60%),
+        linear-gradient(180deg, var(--bg2), var(--bg));
+      color: var(--text);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:1100px; margin:0 auto; padding:28px 20px 70px}
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:16px; padding:8px 0 20px;
+    }
+    .brand{
+      display:flex; align-items:center; gap:12px;
+    }
+    .logo{
+      width:44px; height:44px; border-radius:14px;
+      background: linear-gradient(135deg, rgba(198,168,90,.25), rgba(233,239,233,.10));
+      display:grid; place-items:center;
+      border:1px solid rgba(198,168,90,.25);
+    }
+    .brand h1{
+      font-size:16px; margin:0; letter-spacing:.4px;
+    }
+    .brand small{
+      display:block; margin-top:2px; color:var(--muted); font-size:12px;
+    }
+
+    .cta-row{display:flex; gap:10px; align-items:center}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding:12px 14px; border-radius:14px; font-weight:700;
+      border:1px solid rgba(233,239,233,.12);
+      background: rgba(15,47,43,.55);
+      backdrop-filter: blur(8px);
+      cursor:pointer;
+    }
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(198,168,90,.95), rgba(198,168,90,.72));
+      color:#0B2522;
+      border:1px solid rgba(198,168,90,.55);
+    }
+
+    .hero{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+      margin-top:10px;
+    }
+
+    .panel{
+      border:1px solid rgba(233,239,233,.12);
+      background: rgba(15,47,43,.46);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+
+    .hero-left{
+      padding:34px 30px;
+      min-height: 360px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      gap:18px;
+    }
+
+    .kicker{
+      display:inline-flex;
+      gap:10px; align-items:center;
+      color:var(--muted);
+      font-size:13px;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+    }
+    .dot{
+      width:8px; height:8px; border-radius:999px;
+      background: var(--gold);
+      box-shadow: 0 0 0 6px rgba(198,168,90,.12);
+    }
+
+    .title{
+      margin:0;
+      font-size:44px;
+      line-height:1.06;
+      letter-spacing:-.4px;
+    }
+    .title .gold{color:var(--gold)}
+    .sub{
+      margin:0;
+      color:var(--muted);
+      font-size:16px;
+      line-height:1.6;
+      max-width: 58ch;
+    }
+
+    .actions{
+      display:flex; gap:12px; flex-wrap:wrap;
+      margin-top:10px;
+    }
+
+    .mini{
+      padding:26px 22px;
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      justify-content:space-between;
+    }
+
+    .mini h3{
+      margin:0;
+      font-size:16px;
+      letter-spacing:.3px;
+    }
+    .mini p{margin:0; color:var(--muted); line-height:1.55; font-size:14px}
+    .mini .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid rgba(233,239,233,.14);
+      background: rgba(11,37,34,.55);
+      width:fit-content;
+      font-weight:700;
+      color: var(--text);
+      font-size:13px;
+    }
+    .arrow{color:var(--gold); font-weight:900}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+      margin-top:18px;
+    }
+
+    .card{
+      padding:18px 18px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(233,239,233,.12);
+      background: rgba(15,47,43,.40);
+    }
+    .card b{display:block; margin-bottom:6px}
+    .card p{margin:0; color:var(--muted); line-height:1.55; font-size:14px}
+
+    .section{
+      margin-top:26px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:16px;
+    }
+    .section .panel{padding:22px}
+    .section h2{
+      margin:0 0 8px;
+      font-size:18px;
+      letter-spacing:.2px;
+    }
+    .list{
+      margin:12px 0 0; padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+    .li{
+      display:flex; gap:10px; align-items:flex-start;
+      padding:12px 12px;
+      border-radius: 14px;
+      border:1px solid rgba(233,239,233,.10);
+      background: rgba(11,37,34,.45);
+    }
+    .check{
+      width:18px; height:18px; margin-top:1px;
+      border-radius:6px;
+      border:1px solid rgba(198,168,90,.6);
+      display:grid; place-items:center;
+      color: var(--gold);
+      font-size:12px;
+      flex: 0 0 auto;
+    }
+    .li span{color:var(--muted); font-size:14px; line-height:1.45}
+
+    .pricing{
+      margin-top:16px;
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:16px;
+    }
+    .price{
+      padding:18px;
+      border-radius: var(--radius2);
+      border:1px solid rgba(233,239,233,.12);
+      background: rgba(15,47,43,.40);
+    }
+    .price .tag{
+      color:var(--gold);
+      font-weight:800;
+      font-size:12px;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+    }
+    .price h3{margin:8px 0 6px; font-size:18px}
+    .price .meta{margin:0; color:var(--muted); font-size:13px}
+    .price ul{
+      margin:12px 0 0; padding-left:18px; color:var(--muted);
+      line-height:1.55; font-size:13.5px;
+    }
+    .price .foot{
+      margin-top:14px;
+      padding-top:12px;
+      border-top:1px solid var(--line);
+      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
+      color:var(--text);
+      font-weight:800;
+    }
+    .price .foot small{color:var(--muted); font-weight:600}
+
+    .footer{
+      margin-top:26px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footer b{color:var(--text)}
+    .badge{color:var(--gold); font-weight:800}
+
+    @media (max-width: 920px){
+      .hero{grid-template-columns:1fr}
+      .title{font-size:36px}
+      .grid{grid-template-columns:1fr}
+      .section{grid-template-columns:1fr}
+      .pricing{grid-template-columns:1fr}
+    }
+  </style>
 </head>
+
 <body>
-<div class="container">
-<h1>PMEs não quebram por falta de esforço.<br>
-Quebram por falta de <span class="highlight">estrutura estratégica.</span></h1>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo">🌙</div>
+        <div>
+          <h1>Telluna <small>Estratégia • Estrutura • Crescimento</small></h1>
+        </div>
+      </div>
+      <div class="cta-row">
+        <a class="btn" href="#planos">Ver planos</a>
+        <a class="btn primary" href="mailto:contato@telluna.com.br">Agendar conversa</a>
+      </div>
+    </div>
 
-<p>
-A Telluna é uma consultoria empresarial estratégica que organiza gestão,
-fortalece governança e estrutura crescimento para empresas que querem
-evoluir com direção, controle e resultado.
-</p>
+    <div class="hero">
+      <div class="panel hero-left">
+        <div>
+          <div class="kicker"><span class="dot"></span> Consultoria Empresarial Estratégica</div>
+          <h2 class="title">
+            PMEs não quebram por falta de esforço.<br>
+            Quebram por falta de <span class="gold">estrutura estratégica</span>.
+          </h2>
+          <p class="sub">
+            Organizamos gestão, fortalecemos governança e alinhamos decisões para empresas que querem crescer
+            com previsibilidade, controle e direção.
+          </p>
+          <div class="actions">
+            <a class="btn primary" href="mailto:contato@telluna.com.br">Quero um diagnóstico</a>
+            <a class="btn" href="#como">Como funciona</a>
+          </div>
+        </div>
 
-<div class="button">
-<a href="mailto:contato@telluna.com.br">Agendar Diagnóstico Estratégico</a>
-</div>
+        <div class="grid">
+          <div class="card">
+            <b>Clareza</b>
+            <p>Prioridades e plano de ação direto ao ponto.</p>
+          </div>
+          <div class="card">
+            <b>Controle</b>
+            <p>Processos e indicadores simples para decisão.</p>
+          </div>
+          <div class="card">
+            <b>Crescimento</b>
+            <p>Estrutura antes de escalar, com segurança.</p>
+          </div>
+        </div>
+      </div>
 
-<div class="footer">
-Telluna | Estratégia • Estrutura • Crescimento
-</div>
-</div>
+      <div class="panel mini">
+        <div>
+          <h3>Estruturação e fortalecimento de práticas de gestão, compliance e transparência.</h3>
+          <p>
+            Abordagem prática e adaptada à realidade das PMEs — sem burocracia, com foco em execução.
+          </p>
+        </div>
+        <a class="pill" href="#planos">
+          Saiba mais <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="section" id="como">
+      <div class="panel">
+        <h2>Como fazemos</h2>
+        <p class="sub">Um método simples para gerar organização e decisões melhores, sem travar a operação.</p>
+        <div class="list">
+          <div class="li"><div class="check">✓</div><span><b>Diagnóstico</b>: entendemos a realidade, riscos e prioridades.</span></div>
+          <div class="li"><div class="check">✓</div><span><b>Plano de ação</b>: metas, prazos e responsáveis sem excesso de teoria.</span></div>
+          <div class="li"><div class="check">✓</div><span><b>Implantação guiada</b>: suporte para aplicar o que foi definido.</span></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Por que agir agora</h2>
+        <p class="sub">
+          O mercado favorece empresas mais organizadas, transparentes e preparadas para crescer com segurança.
+          Antecipar estrutura reduz risco e aumenta competitividade.
+        </p>
+        <div class="list">
+          <div class="li"><div class="check">✓</div><span>Menos retrabalho, desperdício e decisões no improviso.</span></div>
+          <div class="li"><div class="check">✓</div><span>Mais previsibilidade para crédito, contratos e parcerias.</span></div>
+          <div class="li"><div class="check">✓</div><span>Posicionamento mais forte para escalar com consistência.</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top:16px" id="planos">
+      <div style="padding:22px">
+        <h2 style="margin:0 0 6px; font-size:18px;">Planos, prazos e investimento</h2>
+        <p class="sub" style="margin:0">Escolha o nível ideal para o momento do seu negócio. Tudo remoto e com entregas claras.</p>
+
+        <div class="pricing">
+          <div class="price">
+            <div class="tag">Essencial</div>
+            <h3>Organização</h3>
+            <p class="meta">Para começar com clareza e prioridades.</p>
+            <ul>
+              <li>Diagnóstico simplificado</li>
+              <li>Mapa de riscos e oportunidades</li>
+              <li>Plano de ação prático</li>
+              <li>Reuniões estratégicas online</li>
+            </ul>
+            <div class="foot">
+              <span>R$ 6.000+</span>
+              <small>até 60 dias</small>
+            </div>
+          </div>
+
+          <div class="price" style="border-color: rgba(198,168,90,.35)">
+            <div class="tag">Estratégico</div>
+            <h3>Estruturação</h3>
+            <p class="meta">Para formalizar e evoluir com método.</p>
+            <ul>
+              <li>Diagnóstico completo</li>
+              <li>Políticas e processos básicos</li>
+              <li>Indicadores simples de acompanhamento</li>
+              <li>Apoio à implantação</li>
+            </ul>
+            <div class="foot">
+              <span>R$ 10.000+</span>
+              <small>até 90 dias</small>
+            </div>
+          </div>
+
+          <div class="price">
+            <div class="tag">Recorrente</div>
+            <h3>Acompanhamento</h3>
+            <p class="meta">Para manter ritmo e evolução contínua.</p>
+            <ul>
+              <li>Revisão mensal de metas e indicadores</li>
+              <li>Ajustes estratégicos contínuos</li>
+              <li>Suporte consultivo ao gestor</li>
+              <li>Contrato mínimo 6 meses</li>
+            </ul>
+            <div class="foot">
+              <span>R$ 1.500/mês+</span>
+              <small>6 meses</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div><b>Telluna</b> <span class="badge">•</span> Consultoria Empresarial Estratégica</div>
+      <div>Contato: <a href="mailto:contato@telluna.com.br"><b>contato@telluna.com.br</b></a></div>
+    </div>
+  </div>
 </body>
 </html>
