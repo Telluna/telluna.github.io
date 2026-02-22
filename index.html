@@ -1,596 +1,233 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Telluna | Consultoria Empresarial Estratégica</title>
-  <meta name="description" content="Consultoria empresarial estratégica para PMEs: estrutura, direção e decisões para crescer com previsibilidade." />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Telluna | Consultoria Empresarial Estratégica</title>
 
-  <style>
-.brandHero{
-  padding: 80px 20px 60px;
-  text-align:center;
+<style>
+
+:root{
+--green:#0F2E2A;
+--green-dark:#0B2522;
+--beige:#F3EFE6;
+--gold:#C6A85A;
+--text-light:#EAF1EA;
+--text-dark:#0B2522;
+--muted:#5A6A64;
 }
 
-.brandInner{
-  max-width:900px;
-  margin:0 auto;
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial, sans-serif;}
+
+a{text-decoration:none}
+
+/* HERO */
+.hero{
+background:linear-gradient(180deg,var(--green),var(--green-dark));
+color:var(--text-light);
+padding:100px 20px 120px;
+text-align:center;
 }
 
-.brandLogo{
-  width:110px;
-  margin-bottom:30px;
+.hero h1{
+font-size:56px;
+line-height:1.05;
+margin:0;
 }
 
-.brandTitle{
-  margin:0;
-  font-size:56px;
-  letter-spacing:4px;
-  font-weight:700;
-  color:#EAF1EA;
+.hero h1 span{
+color:var(--gold);
 }
 
-.brandSubtitle{
-  margin-top:20px;
-  font-size:16px;
-  letter-spacing:1px;
-  color:#B9C7BF;
-  line-height:1.8;
+.hero p{
+margin-top:20px;
+font-size:18px;
+color:#B9C7BF;
 }
 
-.brandButtons{
-  margin-top:35px;
-  display:flex;
-  justify-content:center;
-  gap:15px;
-  flex-wrap:wrap;
+.btn{
+display:inline-block;
+margin-top:35px;
+padding:14px 22px;
+border-radius:12px;
+font-weight:700;
+border:none;
+cursor:pointer;
 }
 
-.btn.ghost{
-  background:transparent;
-  border:1px solid rgba(234,241,234,.3);
-  color:#EAF1EA;
+.btn.primary{
+background:var(--gold);
+color:var(--green-dark);
 }
-    :root{
-      --green:#0F2E2A;
-      --green2:#0B2522;
-      --beige:#F3EFE6;
-      --beige2:#EFE7DA;
-      --gold:#C6A85A;
 
-      --textDark:#0B2522;
-      --textLight:#EAF1EA;
-      --mutedLight:#B9C7BF;
-      --mutedDark:#3E4A46;
+/* COMO FUNCIONA */
+.section-beige{
+background:var(--beige);
+color:var(--text-dark);
+padding:80px 20px;
+text-align:center;
+}
 
-      --lineLight: rgba(234,241,234,.18);
-      --lineDark: rgba(11,37,34,.14);
+.section-beige h2{
+font-size:36px;
+margin-bottom:40px;
+}
 
-      --shadow: 0 18px 50px rgba(0,0,0,.22);
-      --shadowSoft: 0 14px 30px rgba(0,0,0,.12);
+.steps{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+max-width:1000px;
+margin:0 auto;
+}
 
-      --radius: 22px;
-      --radius2: 16px;
-    }
+.step{
+max-width:260px;
+}
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: Arial, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-      color: var(--textLight);
-      background:
-        radial-gradient(900px 500px at 12% 10%, rgba(198,168,90,.18), transparent 55%),
-        radial-gradient(900px 500px at 90% 0%, rgba(234,241,234,.10), transparent 60%),
-        linear-gradient(180deg, var(--green), var(--green2));
-      overflow-x:hidden;
-    }
-    a{color:inherit; text-decoration:none}
+.step h3{
+margin-bottom:10px;
+}
 
-    .wrap{max-width:1120px; margin:0 auto; padding:22px 20px 70px}
+.step p{
+color:var(--muted);
+line-height:1.6;
+}
 
-    /* HEADER */
-    .topbar{
-      display:flex; align-items:center; justify-content:space-between;
-      gap:16px; padding:10px 0 18px;
-    }
-    .brand{
-      display:flex; align-items:center; gap:14px;
-      padding:10px 12px;
-      border-radius: 18px;
-      border:1px solid rgba(234,241,234,.14);
-      background: rgba(11,37,34,.28);
-      backdrop-filter: blur(10px);
-      box-shadow: 0 10px 28px rgba(0,0,0,.12);
-    }
-    .logoWrap{
-      width:58px; height:58px; border-radius:18px;
-      background: linear-gradient(180deg, var(--beige), var(--beige2));
-      border:1px solid rgba(11,37,34,.10);
-      display:grid; place-items:center;
-      overflow:hidden;
-    }
-    .logoWrap img{
-      width:50px; height:50px; object-fit:contain; display:block;
-    }
-    .brandText h1{
-      margin:0;
-      font-size:18px; letter-spacing:.2px;
-      line-height:1.1;
-    }
-    .brandText small{
-      display:block;
-      margin-top:3px;
-      color: var(--mutedLight);
-      font-size:12px;
-      letter-spacing:.2px;
-    }
+/* PLANOS */
+.section-green{
+background:var(--green);
+color:var(--text-light);
+padding:80px 20px;
+text-align:center;
+}
 
-    .ctaRow{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
-    .btn{
-      display:inline-flex; align-items:center; justify-content:center;
-      padding:12px 14px; border-radius:14px; font-weight:700;
-      border:1px solid rgba(234,241,234,.14);
-      background: rgba(15,47,43,.45);
-      backdrop-filter: blur(8px);
-      cursor:pointer;
-      white-space:nowrap;
-    }
-    .btn.primary{
-      background: linear-gradient(135deg, rgba(198,168,90,.95), rgba(198,168,90,.72));
-      color: var(--textDark);
-      border:1px solid rgba(198,168,90,.55);
-    }
+.section-green h2{
+font-size:36px;
+margin-bottom:40px;
+}
 
-    /* HERO */
-    .hero{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:16px;
-      align-items:stretch;
-      margin-top:8px;
-    }
-    .panel{
-      border:1px solid rgba(234,241,234,.14);
-      background: rgba(15,47,43,.42);
-      backdrop-filter: blur(12px);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow:hidden;
-      position:relative;
-    }
-    .heroLeft{
-      padding:34px 30px;
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
-    .kicker{
-      display:inline-flex;
-      gap:10px; align-items:center;
-      color:var(--mutedLight);
-      font-size:12px;
-      letter-spacing:.7px;
-      text-transform:uppercase;
-    }
-    .dot{
-      width:8px; height:8px; border-radius:999px;
-      background: var(--gold);
-      box-shadow: 0 0 0 6px rgba(198,168,90,.12);
-    }
-    .title{
-      margin:0;
-      font-size:42px;
-      line-height:1.08;
-      letter-spacing:-.4px;
-    }
-    .title .gold{color:var(--gold)}
-    .sub{
-      margin:0;
-      color: var(--mutedLight);
-      font-size:16px;
-      line-height:1.65;
-      max-width: 62ch;
-    }
-    .actions{display:flex; gap:12px; flex-wrap:wrap; margin-top:2px}
+.plans{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+max-width:1100px;
+margin:0 auto;
+}
 
-    .trustRow{
-      margin-top:10px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
-    .trustPill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid rgba(234,241,234,.14);
-      background: rgba(11,37,34,.35);
-      color: var(--textLight);
-      font-weight:700;
-      font-size:13px;
-    }
-    .icon{
-      width:18px; height:18px;
-      border-radius:6px;
-      border:1px solid rgba(198,168,90,.55);
-      color: var(--gold);
-      display:grid; place-items:center;
-      font-size:12px;
-      flex:0 0 auto;
-    }
+.plan{
+background:rgba(255,255,255,.05);
+padding:25px;
+border-radius:18px;
+max-width:280px;
+}
 
-    /* HERO RIGHT: image + soft copy */
-    .heroRight{
-      display:flex;
-      flex-direction:column;
-      gap:0;
-    }
-    .heroImage{
-      height:210px;
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.65)),
-        radial-gradient(900px 420px at 20% 20%, rgba(198,168,90,.18), transparent 55%),
-        url('hero.jpg'); /* opcional: você pode subir uma imagem chamada hero.jpg */
-      background-size: cover;
-      background-position: center;
-      border-bottom:1px solid rgba(234,241,234,.14);
-    }
-    /* fallback caso não tenha hero.jpg: fica bonito igual */
-    .heroImage.noimg{
-      background:
-        linear-gradient(180deg, rgba(0,0,0,.06), rgba(0,0,0,.55)),
-        radial-gradient(900px 420px at 20% 20%, rgba(198,168,90,.22), transparent 60%),
-        radial-gradient(900px 420px at 90% 30%, rgba(234,241,234,.10), transparent 55%);
-    }
+.plan h3{
+color:var(--gold);
+margin-bottom:15px;
+}
 
-    .heroBox{
-      padding:22px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-    .heroBox h3{
-      margin:0;
-      font-size:16px;
-      letter-spacing:.2px;
-    }
-    .heroBox p{
-      margin:0;
-      color: var(--mutedLight);
-      line-height:1.6;
-      font-size:14px;
-    }
-    .quote{
-      margin-top:10px;
-      padding:14px 14px;
-      border-radius: 16px;
-      border:1px solid rgba(234,241,234,.12);
-      background: rgba(11,37,34,.35);
-      color: var(--textLight);
-      font-size:13.5px;
-      line-height:1.55;
-    }
-    .quote b{color: var(--gold)}
+.plan p{
+color:#C7D5CF;
+line-height:1.6;
+font-size:14px;
+}
 
-    /* BEIGE SECTION */
-    .sectionBeige{
-      margin-top:18px;
-      background: linear-gradient(180deg, var(--beige), var(--beige2));
-      color: var(--textDark);
-      border-radius: var(--radius);
-      border: 1px solid rgba(11,37,34,.12);
-      box-shadow: var(--shadowSoft);
-      overflow:hidden;
-    }
-    .sectionBeige .inner{padding:24px}
-    .sectionBeige h2{margin:0 0 8px; font-size:20px; letter-spacing:.2px}
-    .sectionBeige .subDark{margin:0; color:var(--mutedDark); line-height:1.65; font-size:15px}
-    .steps{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .step{
-      background: rgba(255,255,255,.62);
-      border:1px solid rgba(11,37,34,.10);
-      border-radius: var(--radius2);
-      padding:16px;
-    }
-    .step .n{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      width:28px; height:28px;
-      border-radius:10px;
-      background: rgba(198,168,90,.22);
-      border:1px solid rgba(198,168,90,.45);
-      color: var(--textDark);
-      font-weight:900;
-      margin-bottom:10px;
-    }
-    .step b{display:block; margin-bottom:6px}
-    .step p{margin:0; color:var(--mutedDark); line-height:1.55; font-size:14px}
+.plan small{
+display:block;
+margin-top:15px;
+font-weight:bold;
+color:#EAF1EA;
+}
 
-    /* PLANS */
-    .plans{
-      margin-top:18px;
-      border-radius: var(--radius);
-      overflow:hidden;
-      border:1px solid rgba(234,241,234,.14);
-      background: rgba(15,47,43,.42);
-      box-shadow: var(--shadow);
-    }
-    .plans .inner{padding:24px}
-    .plans h2{margin:0 0 6px; font-size:20px}
-    .plans .sub{margin:0}
-    .pricing{
-      margin-top:14px;
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap:14px;
-    }
-    .price{
-      padding:16px;
-      border-radius: var(--radius2);
-      border:1px solid rgba(234,241,234,.14);
-      background: rgba(11,37,34,.38);
-    }
-    .tag{
-      color:var(--gold);
-      font-weight:800;
-      font-size:12px;
-      letter-spacing:.6px;
-      text-transform:uppercase;
-    }
-    .price h3{margin:8px 0 6px; font-size:18px}
-    .meta{margin:0; color:var(--mutedLight); font-size:13px; line-height:1.5}
-    .price ul{
-      margin:12px 0 0; padding-left:18px; color:var(--mutedLight);
-      line-height:1.55; font-size:13.5px;
-    }
-    .foot{
-      margin-top:14px;
-      padding-top:12px;
-      border-top:1px solid var(--lineLight);
-      display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap;
-      font-weight:800;
-      color: var(--textLight);
-    }
-    .foot small{color:var(--mutedLight); font-weight:600}
+/* FOOTER */
+.footer{
+background:var(--beige);
+padding:40px 20px;
+text-align:center;
+}
 
-    /* FINAL CTA (Beige) */
-    .finalCta{
-      margin-top:18px;
-      background: linear-gradient(180deg, var(--beige), var(--beige2));
-      color: var(--textDark);
-      border-radius: var(--radius);
-      border: 1px solid rgba(11,37,34,.12);
-      box-shadow: var(--shadowSoft);
-      overflow:hidden;
-    }
-    .finalCta .inner{
-      padding:22px 24px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      flex-wrap:wrap;
-    }
-    .finalCta h3{margin:0; font-size:18px}
-    .finalCta p{margin:4px 0 0; color:var(--mutedDark); line-height:1.55; font-size:14px}
+.footer img{
+width:60px;
+margin:10px;
+cursor:pointer;
+}
 
-    /* FOOTER */
-    .footer{
-      margin-top:22px;
-      padding-top:18px;
-      border-top:1px solid rgba(234,241,234,.16);
-      display:flex;
-      justify-content:space-between;
-      gap:10px;
-      flex-wrap:wrap;
-      color:var(--mutedLight);
-      font-size:13px;
-    }
-    .footer b{color:var(--textLight)}
-    .badge{color:var(--gold); font-weight:800}
-
-    @media (max-width: 980px){
-      .hero{grid-template-columns:1fr}
-      .title{font-size:34px}
-      .steps{grid-template-columns:1fr}
-      .pricing{grid-template-columns:1fr}
-      .finalCta .inner{align-items:flex-start}
-    }
-  </style>
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <!-- HEADER -->
-<div class="brandHero">
-  <div class="brandInner">
-    <img src="logo-telluna.png" alt="Logo Telluna" class="brandLogo" />
 
-    <h1 class="brandTitle">TELLUNA</h1>
+<!-- HERO -->
+<section class="hero">
+<h1>
+PMEs não quebram por falta de esforço.<br>
+Quebram por falta de <span>estrutura estratégica</span>.
+</h1>
+<p>Consultoria Empresarial Estratégica para empresas que querem crescer com direção.</p>
+<a href="mailto:contato@telluna.com.br" class="btn primary">Agendar conversa</a>
+</section>
 
-    <p class="brandSubtitle">
-      Consultoria Empresarial Estratégica<br>
-      Estratégia • Estrutura • Crescimento
-    </p>
+<!-- COMO FUNCIONA -->
+<section class="section-beige">
+<h2>Como funciona</h2>
 
-    <div class="brandButtons">
-      <a class="btn primary" href="mailto:contato@telluna.com.br">
-        Agendar conversa
-      </a>
-      <a class="btn ghost" href="#planos">
-        Ver planos
-      </a>
-    </div>
-  </div>
+<div class="steps">
+<div class="step">
+<h3>Diagnóstico</h3>
+<p>Entendemos a realidade da empresa e identificamos gargalos que impedem crescimento.</p>
 </div>
-    <div class="brand">
-        <div class="logoWrap">
-          <img src="logo-telluna.png" alt="Logo Telluna" />
-        </div>
-        <div class="brandText">
-          <h1>Telluna</h1>
-          <small>Consultoria Empresarial Estratégica • Estratégia • Estrutura • Crescimento</small>
-        </div>
-      </div>
 
-      <div class="ctaRow">
-        <a class="btn" href="#planos">Planos</a>
-        <a class="btn primary" href="mailto:contato@telluna.com.br">Agendar conversa</a>
-      </div>
-    </div>
+<div class="step">
+<h3>Plano de ação</h3>
+<p>Definimos prioridades, metas e direção clara para organizar decisões.</p>
+</div>
 
-    <!-- HERO -->
-    <div class="hero">
-      <div class="panel heroLeft">
-        <div>
-          <div class="kicker"><span class="dot"></span> Direção, organização e decisões melhores</div>
+<div class="step">
+<h3>Implantação</h3>
+<p>Acompanhamos a execução para transformar estratégia em resultado real.</p>
+</div>
+</div>
+</section>
 
-          <h2 class="title">
-            PMEs não quebram por falta de esforço.<br>
-            Quebram por falta de <span class="gold">estrutura estratégica</span>.
-          </h2>
+<!-- PLANOS -->
+<section class="section-green">
+<h2>Planos de atendimento</h2>
 
-          <p class="sub">
-            A Telluna ajuda empresas a organizar gestão, fortalecer governança e criar previsibilidade — com método, leveza e foco em execução.
-          </p>
+<div class="plans">
+<div class="plan">
+<h3>Essencial</h3>
+<p>Organização inicial para estruturar prioridades e criar clareza estratégica.</p>
+<small>Investimento sob consulta</small>
+</div>
 
-          <div class="actions">
-            <a class="btn primary" href="mailto:contato@telluna.com.br">Quero um diagnóstico</a>
-            <a class="btn" href="#como">Como funciona</a>
-          </div>
+<div class="plan">
+<h3>Estruturação</h3>
+<p>Formalização de processos e definição de indicadores para crescimento previsível.</p>
+<small>Investimento sob consulta</small>
+</div>
 
-          <div class="trustRow">
-            <span class="trustPill"><span class="icon">✓</span> Atuação remota e prática</span>
-            <span class="trustPill"><span class="icon">✓</span> Escopo claro</span>
-            <span class="trustPill"><span class="icon">✓</span> Foco em decisão</span>
-          </div>
-        </div>
-      </div>
+<div class="plan">
+<h3>Acompanhamento</h3>
+<p>Suporte recorrente para manter evolução contínua e decisões estratégicas consistentes.</p>
+<small>Contrato mínimo de 6 meses</small>
+</div>
+</div>
+</section>
 
-      <div class="panel heroRight">
-        <!-- Se você quiser imagem real, faça upload de um arquivo "hero.jpg" no repositório -->
-        <div class="heroImage"></div>
-        <div class="heroBox">
-          <h3>Confiança vem de clareza.</h3>
-          <p>Você não precisa de mais tarefas. Precisa de estrutura para decidir melhor e crescer com consistência.</p>
+<!-- FOOTER -->
+<section class="footer">
+<a href="https://www.instagram.com/telluna.esg/" target="_blank">
+<img src="instagram.png" alt="Instagram">
+</a>
 
-          <div class="quote">
-            <b>Entrega central:</b> diagnóstico + plano de ação + acompanhamento para implantação, sem burocracia e sem travar a operação.
-          </div>
-        </div>
-      </div>
-    </div>
+<a href="https://www.linkedin.com/company/telluna/" target="_blank">
+<img src="linkedin.png" alt="LinkedIn">
+</a>
+</section>
 
-    <!-- BEIGE: COMO FUNCIONA -->
-    <div class="sectionBeige" id="como">
-      <div class="inner">
-        <h2>Como funciona</h2>
-        <p class="subDark">Um método simples para organizar, direcionar e executar — com entregas claras e rotina leve.</p>
-
-        <div class="steps">
-          <div class="step">
-            <div class="n">1</div>
-            <b>Diagnóstico</b>
-            <p>Entendemos o cenário, gargalos e prioridades que impactam resultado e previsibilidade.</p>
-          </div>
-          <div class="step">
-            <div class="n">2</div>
-            <b>Plano de ação</b>
-            <p>Metas, prazos e responsáveis, com foco no que destrava crescimento e reduz improviso.</p>
-          </div>
-          <div class="step">
-            <div class="n">3</div>
-            <b>Implantação guiada</b>
-            <p>Acompanhamento para colocar em prática e ajustar com segurança durante a execução.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PLANS (sem valores) -->
-    <div class="plans" id="planos">
-      <div class="inner">
-        <h2>Planos e formatos de atendimento</h2>
-        <p class="sub">O investimento é definido após a conversa inicial, conforme escopo e momento da empresa.</p>
-
-        <div class="pricing">
-          <div class="price">
-            <div class="tag">Essencial</div>
-            <h3>Organização</h3>
-            <p class="meta">Para começar com clareza, prioridades e direção.</p>
-            <ul>
-              <li>Diagnóstico simplificado</li>
-              <li>Mapa de riscos e oportunidades</li>
-              <li>Plano de ação prático</li>
-              <li>Reuniões estratégicas online</li>
-            </ul>
-            <div class="foot">
-              <span>Investimento sob consulta</span>
-              <small>até 60 dias</small>
-            </div>
-          </div>
-
-          <div class="price" style="border-color: rgba(198,168,90,.35)">
-            <div class="tag">Estratégico</div>
-            <h3>Estruturação</h3>
-            <p class="meta">Para formalizar processos e evoluir com método.</p>
-            <ul>
-              <li>Diagnóstico completo</li>
-              <li>Políticas e processos básicos</li>
-              <li>Indicadores simples de acompanhamento</li>
-              <li>Apoio à implantação</li>
-            </ul>
-            <div class="foot">
-              <span>Investimento sob consulta</span>
-              <small>até 90 dias</small>
-            </div>
-          </div>
-
-          <div class="price">
-            <div class="tag">Recorrente</div>
-            <h3>Acompanhamento</h3>
-            <p class="meta">Para manter ritmo e evolução contínua com suporte.</p>
-            <ul>
-              <li>Revisão mensal de metas e indicadores</li>
-              <li>Ajustes estratégicos contínuos</li>
-              <li>Suporte consultivo ao gestor</li>
-              <li>Contrato mínimo de 6 meses</li>
-            </ul>
-            <div class="foot">
-              <span>Investimento sob consulta</span>
-              <small>mín. 6 meses</small>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- FINAL CTA (beige) -->
-    <div class="finalCta">
-      <div class="inner">
-        <div>
-          <h3>Quer clareza sobre o próximo passo da sua empresa?</h3>
-          <p>Me envie uma mensagem e eu te digo qual plano faz mais sentido para o seu momento.</p>
-        </div>
-        <div class="ctaRow">
-          <a class="btn primary" href="mailto:contato@telluna.com.br">Agendar conversa</a>
-          <a class="btn" href="#como">Ver método</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer">
-      <div><b>Telluna</b> <span class="badge">•</span> Consultoria Empresarial Estratégica</div>
-      <div>Contato: <a href="mailto:contato@telluna.com.br"><b>contato@telluna.com.br</b></a></div>
-    </div>
-  </div>
 </body>
 </html>
