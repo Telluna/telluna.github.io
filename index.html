@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Telluna | Consultoria Empresarial Estratégica</title>
-  <meta name="description" content="Consultoria executiva para PMEs: estrutura, governança e direção para crescer com previsibilidade." />
+  <meta name="description" content="A Telluna organiza gestão, fortalece governança e direciona decisões para transformar operação em crescimento previsível." />
 
   <style>
     :root{
@@ -66,12 +66,14 @@
     .brand{
       display:flex;
       align-items:center;
-      gap:14px;
+      gap:16px;
       min-width:0;
     }
+
+    /* >>> IMAGEM 5: LOGO + NOME 3x MAIOR <<< */
     .logoBox{
-      width:58px; height:58px;
-      border-radius:18px;
+      width:96px; height:96px;               /* maior */
+      border-radius:24px;
       background: linear-gradient(180deg, var(--beige), var(--beige2));
       border:1px solid rgba(11,37,34,.10);
       display:grid; place-items:center;
@@ -79,19 +81,19 @@
       flex:0 0 auto;
     }
     .logoBox img{
-      width:48px; height:48px; object-fit:contain; display:block;
+      width:78px; height:78px; object-fit:contain; display:block; /* maior */
     }
-    .brandText{min-width:0; line-height:1.05}
+    .brandText{min-width:0; line-height:1.0}
     .brandText b{
       display:block;
-      font-size:22px;
-      letter-spacing:1.2px;
+      font-size:34px;                         /* maior */
+      letter-spacing:1.8px;
       color: var(--green2);
     }
     .brandText small{
       display:block;
-      margin-top:6px;
-      font-size:12.5px;
+      margin-top:8px;
+      font-size:13.5px;
       color: var(--muted2);
       white-space:nowrap;
       overflow:hidden;
@@ -142,7 +144,7 @@
     .iconBtn svg{width:18px;height:18px;fill:var(--green2)}
 
     /* HERO */
-    .hero{padding: 56px 0 22px;}
+    .hero{padding: 56px 0 16px;}
     .heroGrid{
       display:grid;
       grid-template-columns: 1.05fr .95fr;
@@ -187,8 +189,33 @@
       color: var(--muted);
       max-width: 85ch;
     }
+
+    /* >>> NOVO: BLOCO "QUE É A TELLUNA?" LOGO APÓS A IMAGEM 1 <<< */
+    .aboutTelluna{
+      margin-top:18px;
+      padding:16px 18px;
+      border-radius: 18px;
+      border:1px solid rgba(11,37,34,.10);
+      background: rgba(243,239,230,.70);
+    }
+    .aboutTelluna b{
+      display:block;
+      color: var(--green2);
+      font-size:14px;
+      letter-spacing:.6px;
+      text-transform:uppercase;
+      margin-bottom:6px;
+    }
+    .aboutTelluna p{
+      margin:0;
+      color: var(--muted);
+      line-height:1.7;
+      font-size:14.8px;
+      max-width: 95ch;
+    }
+
     .heroActions{
-      margin-top:22px;
+      margin-top:18px;
       display:flex;
       gap:10px;
       flex-wrap:wrap;
@@ -276,7 +303,7 @@
       color: rgba(234,241,234,.84);
       line-height:1.7;
       font-size:15.5px;
-      max-width: none; /* sem corte "no meio" */
+      max-width: none;
     }
 
     /* POR QUE - 2 COLUNAS (imagem esquerda / texto direita) */
@@ -287,12 +314,11 @@
       align-items: stretch;
       margin-top: 16px;
     }
-
     .whyImage{
       border-radius: 26px;
       border:1px solid rgba(255,255,255,.12);
       overflow:hidden;
-      min-height: 520px;           /* garante altura para não sobrar vazio */
+      min-height: 520px;
       background:
         linear-gradient(180deg, rgba(11,37,34,.18), rgba(11,37,34,.70)),
         radial-gradient(900px 520px at 20% 10%, rgba(198,168,90,.16), transparent 60%),
@@ -302,22 +328,12 @@
       box-shadow: var(--shadow2);
       position:relative;
     }
-
     .whyRight{
       display:flex;
       flex-direction:column;
       gap: 12px;
-      min-height: 520px;           /* mesma altura da imagem para preencher */
+      min-height: 520px;
     }
-
-    .whyCard{
-      border-radius: var(--radius2);
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(11,37,34,.35);
-      padding:18px;
-    }
-    .whyCard b{display:block; color: var(--gold); margin-bottom:8px}
-    .whyCard p{margin:0; color: rgba(234,241,234,.84); line-height:1.65; font-size:14.5px}
 
     .whyList{
       display:grid;
@@ -341,32 +357,40 @@
       flex:0 0 auto;
       margin-top:2px;
     }
-    .whyItem span{color: rgba(234,241,234,.84); line-height:1.6; font-size:14.5px}
+    .whyItem span{color: rgba(234,241,234,.84); line-height:1.6; font-size:14.8px}
 
-    /* complemento que preenche sem cansar */
-    .whyMetrics{
-      margin-top:auto; /* empurra para preencher a parte de baixo */
+    /* >>> IMAGEM 2: FRASES NOVAS <<< */
+    .whyStatements{
+      margin-top:auto;
       display:grid;
-      grid-template-columns: repeat(3, 1fr);
       gap:10px;
     }
-    .metric{
+    .statement{
+      display:flex;
+      gap:10px;
+      align-items:flex-start;
+      padding:16px;
       border-radius: 16px;
       border:1px solid rgba(255,255,255,.12);
       background: rgba(11,37,34,.35);
-      padding:14px;
+      color: rgba(234,241,234,.88);
+      line-height:1.6;
+      font-size:15px;
     }
-    .metric b{
-      display:block;
+    .statement b{
       color:#EAF1EA;
-      font-size:14px;
-      margin-bottom:6px;
+      font-weight:900;
     }
-    .metric span{
-      display:block;
-      color: rgba(234,241,234,.84);
-      font-size:13.5px;
-      line-height:1.5;
+    .statement .mark{
+      width:18px;height:18px;border-radius:6px;
+      border:1px solid rgba(198,168,90,.55);
+      background: rgba(255,255,255,.08);
+      display:grid;place-items:center;
+      color: var(--gold);
+      font-weight:900;
+      font-size:12px;
+      flex:0 0 auto;
+      margin-top:2px;
     }
 
     /* COMO FUNCIONA */
@@ -439,6 +463,58 @@
     .n3{bottom:20px; left:50%; transform: translateX(-50%);}
     .n4{top:50%; left:20px; transform: translateY(-50%);}
 
+    /* >>> IMAGEM 3: FRASE GRANDE EM DESTAQUE (NO BLOCO COMO FUNCIONA) <<< */
+    .impactQuote{
+      margin-top: 22px;
+      border-radius: 26px;
+      border: 1px solid rgba(11,37,34,.10);
+      background:
+        radial-gradient(900px 520px at 18% 0%, rgba(198,168,90,.18), transparent 60%),
+        linear-gradient(180deg, rgba(243,239,230,.85), rgba(239,231,218,.85));
+      box-shadow: var(--shadow2);
+      padding: 26px 24px;
+      text-align:center;
+    }
+    .impactQuote h3{
+      margin:0;
+      color: var(--green2);
+      font-size:28px;
+      line-height:1.25;
+      letter-spacing:-.2px;
+    }
+    .impactQuote h3 .gold{color: var(--gold); font-weight:900;}
+
+    /* >>> BLOCO NOVO ABAIXO DA IMAGEM 3 <<< */
+    .painBlock{
+      margin-top: 14px;
+      border-radius: 26px;
+      border: 1px solid rgba(11,37,34,.10);
+      background: rgba(255,255,255,.55);
+      box-shadow: var(--shadow2);
+      padding: 24px 22px;
+    }
+    .painBlock h3{
+      margin:0 0 12px;
+      color: var(--green2);
+      font-size:26px;
+      letter-spacing:-.2px;
+    }
+    .painGrid{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap:12px;
+    }
+    .painItem{
+      border-radius: 18px;
+      border:1px solid rgba(11,37,34,.10);
+      background: rgba(243,239,230,.70);
+      padding:14px;
+      color: var(--muted);
+      line-height:1.6;
+      font-size:14.8px;
+    }
+    .painItem b{color: var(--green2);}
+
     /* PLANOS */
     .plansGrid{
       display:grid;
@@ -451,7 +527,7 @@
       border:1px solid rgba(255,255,255,.12);
       background: rgba(11,37,34,.35);
       padding:18px;
-      min-height: 170px;
+      min-height: 190px;
     }
     .plan .tag{
       color: var(--gold);
@@ -468,8 +544,8 @@
     .plan p{
       margin:0;
       color: rgba(234,241,234,.84);
-      line-height:1.65;
-      font-size:14.5px;
+      line-height:1.7;
+      font-size:14.8px;
     }
     .plan .meta{
       margin-top:14px;
@@ -484,6 +560,35 @@
       font-size:13px;
     }
     .plan .meta small{color: rgba(234,241,234,.78); font-weight:700}
+
+    /* >>> BOTÃO FINAL (PISCANDO) <<< */
+    .ctaWrap{
+      margin-top: 22px;
+      display:flex;
+      justify-content:center;
+    }
+    .ctaBig{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:18px 26px;
+      border-radius: 18px;
+      font-weight:900;
+      font-size:18px;
+      letter-spacing:.2px;
+      color: var(--green2);
+      border:1px solid rgba(198,168,90,.55);
+      background: linear-gradient(135deg, rgba(198,168,90,.98), rgba(198,168,90,.74));
+      box-shadow: 0 18px 44px rgba(198,168,90,.22);
+      animation: pulse 1.15s ease-in-out infinite;
+      transform-origin:center;
+    }
+    @keyframes pulse{
+      0%{transform:scale(1); box-shadow:0 18px 44px rgba(198,168,90,.20)}
+      50%{transform:scale(1.03); box-shadow:0 22px 60px rgba(198,168,90,.32)}
+      100%{transform:scale(1); box-shadow:0 18px 44px rgba(198,168,90,.20)}
+    }
 
     /* FOOTER */
     footer{
@@ -520,13 +625,16 @@
       .heroGrid{grid-template-columns: 1fr;}
       .heroImageCard, .heroImageFill{min-height: 320px;}
       .why2col{grid-template-columns: 1fr;}
-      .whyImage{min-height: 280px;}
+      .whyImage{min-height: 300px;}
       .whyRight{min-height: unset;}
-      .whyMetrics{grid-template-columns: 1fr;}
       .process{grid-template-columns: 1fr;}
       .wheelWrap{height: 360px;}
       .plansGrid{grid-template-columns: 1fr;}
+      .painGrid{grid-template-columns: 1fr;}
       .heroTitle{font-size:44px;}
+      .brandText b{font-size:28px;}
+      .logoBox{width:82px;height:82px;}
+      .logoBox img{width:66px;height:66px;}
     }
   </style>
 </head>
@@ -538,6 +646,7 @@
     <div class="headerInner">
       <div class="brand">
         <div class="logoBox">
+          <!-- Ajuste para o nome real do seu arquivo de logo -->
           <img src="logo-telluna.png" alt="Logo Telluna">
         </div>
         <div class="brandText">
@@ -571,6 +680,7 @@
   <main class="wrap">
     <section class="hero" id="inicio">
       <div class="heroGrid">
+
         <div class="card heroMain">
           <div class="kicker"><span class="dot"></span> Estrutura executiva para crescimento com previsibilidade</div>
 
@@ -583,6 +693,15 @@
             Nós organizamos a gestão, fortalecemos a governança e direcionamos as decisões
             para transformar operação em crescimento consistente — com método, clareza e execução.
           </p>
+
+          <!-- NOVO BLOCO: QUE É A TELLUNA? (>=150 caracteres) -->
+          <div class="aboutTelluna">
+            <b>Que é a Telluna?</b>
+            <p>
+              A Telluna é uma consultoria empresarial estratégica que organiza a gestão da sua empresa com método e execução.
+              Estruturamos prioridades, processos e indicadores simples para transformar decisões em previsibilidade, eficiência e crescimento consistente.
+            </p>
+          </div>
 
           <div class="heroActions">
             <a class="btn primary" href="mailto:contato@telluna.com.br">Solicitar diagnóstico</a>
@@ -599,11 +718,12 @@
         <div class="card heroImageCard" aria-label="Imagem institucional Telluna">
           <div class="heroImageFill"></div>
         </div>
+
       </div>
     </section>
   </main>
 
-  <!-- POR QUE (Imagem esquerda / Texto direita / sem vazio) -->
+  <!-- POR QUE (alternância de cor: VERDE) -->
   <section class="bandGreen" id="porque">
     <div class="bandInner">
       <h2 class="bandTitle">Por que a Telluna</h2>
@@ -617,12 +737,12 @@
         <div class="whyImage" aria-label="Transparência e parceria"></div>
 
         <div class="whyRight">
-          <div class="whyCard">
-            <b>O que entregamos, na prática</b>
-            <p>
-              Diagnóstico do cenário atual, plano de ação com prioridades e metas, e acompanhamento de implantação.
-              Um método enxuto para organizar rotina, consolidar indicadores simples e dar direção ao crescimento.
-            </p>
+
+          <!-- IMAGEM 2: substituição por frases novas -->
+          <div class="whyStatements">
+            <div class="statement"><span class="mark">✓</span><span><b>Estruturamos metas trimestrais</b> com indicadores simples.</span></div>
+            <div class="statement"><span class="mark">✓</span><span><b>Criamos rotina de decisão</b> baseada em números reais.</span></div>
+            <div class="statement"><span class="mark">✓</span><span><b>Transformamos operação confusa</b> em gestão previsível.</span></div>
           </div>
 
           <div class="whyList">
@@ -631,28 +751,12 @@
             <div class="whyItem"><span class="whyCheck">✓</span><span>Atuação remota com rotina leve e acompanhamento consistente.</span></div>
           </div>
 
-          <!-- preenchimento premium (sem parecer texto demais) -->
-          <div class="whyMetrics">
-            <div class="metric">
-              <b>Clareza</b>
-              <span>Prioridades + responsáveis + sequência de execução para destravar decisões.</span>
-            </div>
-            <div class="metric">
-              <b>Controle</b>
-              <span>Indicadores simples e rotina para reduzir desperdício e retrabalho.</span>
-            </div>
-            <div class="metric">
-              <b>Previsibilidade</b>
-              <span>Gestão organizada para crescer com segurança, sem travar a operação.</span>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COMO FUNCIONA -->
+  <!-- COMO FUNCIONA (alternância de cor: BEGE) -->
   <section class="section wrap" id="como">
     <h2 class="sectionTitle">Como funciona</h2>
     <p class="sectionLead">
@@ -691,9 +795,27 @@
         </div>
       </div>
     </div>
+
+    <!-- IMAGEM 3: FRASE GRANDE EM DESTAQUE -->
+    <div class="impactQuote">
+      <h3>
+        A Telluna não entrega relatórios. <span class="gold">Entrega rotina estruturada de decisão</span>.
+      </h3>
+    </div>
+
+    <!-- BLOCO NOVO ABAIXO: IMPACTO EMOCIONAL -->
+    <div class="painBlock">
+      <h3>Se você não fizer isso hoje, o que sua empresa sofre?</h3>
+      <div class="painGrid">
+        <div class="painItem"><b>•</b> Cresce no esforço, mas <b>não vira lucro</b> porque tudo se perde na desorganização.</div>
+        <div class="painItem"><b>•</b> Depende do dono para tudo e <b>trava</b> quando a operação aumenta.</div>
+        <div class="painItem"><b>•</b> Toma decisões no “achismo” e <b>paga caro</b> com retrabalho e desperdício.</div>
+        <div class="painItem"><b>•</b> Perde oportunidades por falta de controle — e <b>só percebe tarde</b> quando o caixa aperta.</div>
+      </div>
+    </div>
   </section>
 
-  <!-- PLANOS -->
+  <!-- PLANOS (alternância de cor: VERDE) -->
   <section class="bandGreen" id="planos">
     <div class="bandInner">
       <h2 class="bandTitle">Planos de atendimento</h2>
@@ -706,8 +828,8 @@
           <div class="tag">Essencial</div>
           <h3>Organização</h3>
           <p>
-            Para empresas que precisam colocar ordem na rotina: clareza de prioridades,
-            definição do que é crítico e um plano enxuto para decisões mais seguras.
+            Para colocar ordem na rotina e parar de apagar incêndio.
+            Definimos prioridades, responsabilidades e uma sequência de ação objetiva para melhorar decisões sem burocracia.
           </p>
           <div class="meta">
             <span>Investimento sob consulta</span>
@@ -719,8 +841,8 @@
           <div class="tag">Estratégico</div>
           <h3>Estruturação</h3>
           <p>
-            Para formalizar processos essenciais, alinhar responsabilidades e criar indicadores simples.
-            Ideal para crescer com previsibilidade e reduzir retrabalho e desperdício.
+            Para formalizar processos essenciais, criar indicadores simples e alinhar a equipe.
+            Ideal para crescer com previsibilidade, reduzir retrabalho e transformar rotina em consistência.
           </p>
           <div class="meta">
             <span>Investimento sob consulta</span>
@@ -732,14 +854,19 @@
           <div class="tag">Recorrente</div>
           <h3>Acompanhamento</h3>
           <p>
-            Suporte contínuo para manter consistência: revisão de metas, apoio nas decisões e ajustes na execução.
-            Um braço consultivo para o gestor não caminhar sozinho.
+            Para manter a evolução no ritmo certo.
+            Revisamos metas, apoiamos decisões e ajustamos a execução com você — um braço consultivo para não voltar ao improviso.
           </p>
           <div class="meta">
             <span>Investimento sob consulta</span>
             <small>mín. 6 meses</small>
           </div>
         </div>
+      </div>
+
+      <!-- CTA FINAL (PISCANDO) -->
+      <div class="ctaWrap">
+        <a class="ctaBig" href="mailto:contato@telluna.com.br">Agendar conversa estratégica</a>
       </div>
 
       <footer>
