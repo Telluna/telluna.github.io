@@ -317,20 +317,20 @@
       background: rgba(255,255,255,.04);
       padding: 28px;
       box-shadow: 0 18px 44px rgba(0,0,0,.18);
-      min-height: 380px;
-      padding-top: 44px;
-      padding-bottom: 44px;
+      min-height: 520px;
+      padding-top: 64px;
+      padding-bottom: 64px;
     }
 
     .ringWrap{
       width: 380px;
       max-width: 100%;
       margin: 0 auto;
-      border-radius: 22px;
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(255,255,255,.06);
-      padding: 20px;
-      box-shadow: 0 16px 36px rgba(0,0,0,.20);
+      border-radius: 0 !important;
+      border:none !important;
+      background: transparent !important;
+      padding: 0 !important;
+      box-shadow: none !important;
     }
     .ring{
       width:100%;
@@ -360,7 +360,7 @@
 
     .howCard{
       position:absolute;
-      width: 320px;
+      width: 420px;
       border-radius: 16px;
       padding: 16px 16px;
       border:1px solid rgba(255,255,255,.14);
@@ -382,16 +382,16 @@
     }
 
     /* posições: 1 em cima, 2 direita, 3 embaixo, 4 esquerda */
-    .pos1{top:18px; left:50%; transform:translateX(-50%);}
+    .pos1{top:10px !important; left:50%; transform:translateX(-50%) !important;}
     .pos2{top:50%; right:22px; transform:translateY(-50%);}
-    .pos3{bottom:18px; left:50%; transform:translateX(-50%);}
+    .pos3{bottom:10px !important; left:50%; transform:translateX(-50%) !important;}
     .pos4{top:50%; left:22px; transform:translateY(-50%);}
 
     /* deixa o círculo sempre central */
     .centerRing{
       position:absolute;
       left:50%;
-      top:54%;
+      top:52% !important;
       transform: translate(-50%, -50%);
       z-index: 2;
     }
@@ -605,11 +605,11 @@
       .planGrid{grid-template-columns:1fr; }
       .painGrid{grid-template-columns:1fr;}
       .howBoard{min-height: 640px;}
-      .howCard{width: min(86vw, 420px);}
+      .howCard{width: min(88vw, 420px}
       .pos2{right: 50%; top: 18px; transform: translateX(50%);} /* empilha melhor */
       .pos4{left: 50%; bottom: 18px; top: auto; transform: translateX(-50%);}
-      .pos1{top: 14px;}
-      .pos3{bottom: 14px;}
+      .pos1{top: 8px;}
+      .pos3{bottom: 8px;}
       .centerRing{top:56%; left:50%;}
     }
     @media (max-width: 720px){
@@ -623,8 +623,9 @@
       .section{padding:56px 0;}
       .heroTitle{font-size:38px}
       .whyText h2,.howTop h2,.plansHead h2{font-size:34px}
-      .howBoard{min-height: 620px;}
+      .howBoard{ min-height: 680px;}
       .quoteBar{font-size:20px;}
+      
     }
   </style>
 </head>
