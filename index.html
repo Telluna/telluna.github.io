@@ -10,19 +10,14 @@
       --green:#0F2E2A;
       --green2:#0B2522;
       --gold:#C6A85A;
-
       --beige:#F3EFE6;
       --beige2:#EDE4D6;
-
       --white:#ffffff;
       --line: rgba(11,37,34,.14);
-
       --text:#0B2522;
       --muted:#41514B;
-
       --radius:22px;
       --radius2:16px;
-
       --max: 1200px;
       --shadow: 0 16px 42px rgba(0,0,0,.10);
       --shadowSoft: 0 12px 30px rgba(0,0,0,.08);
@@ -40,8 +35,8 @@
         linear-gradient(180deg, var(--beige), var(--beige2));
       overflow-x:hidden;
     }
-    a{color:inherit; text-decoration:none}
 
+    a{color:inherit; text-decoration:none}
     .wrap{max-width:var(--max); margin:0 auto; padding:0 26px;}
     .section{padding:72px 0;}
     .bg-beige{background:transparent;}
@@ -53,7 +48,7 @@
       color:#fff;
     }
 
-    /* ===== HEADER ===== */
+    /* HEADER */
     header{
       position:sticky;
       top:0;
@@ -81,7 +76,7 @@
       width:120px;
       height:120px;
       background: transparent;
-      border: none;
+      border:none;
       box-shadow:none;
       padding:0;
       display:grid;
@@ -147,7 +142,7 @@
       100%{transform:scale(1); box-shadow:0 18px 44px rgba(198,168,90,.20)}
     }
 
-    /* ===== HERO ===== */
+    /* HERO */
     .heroGrid{
       display:grid;
       grid-template-columns: 1.05fr .95fr;
@@ -225,7 +220,7 @@
     }
     .aboutStrip b{color: var(--green2);}
 
-    /* ===== Por que ===== */
+    /* POR QUE */
     .grid2{
       display:grid;
       grid-template-columns: .95fr 1.05fr;
@@ -289,7 +284,7 @@
     .checkItem b{color:#fff}
     .checkItem span{color: rgba(255,255,255,.86); line-height:1.55; font-size:14.8px}
 
-    /* ===== COMO FUNCIONA (AJUSTADO: card na direção de cada número) ===== */
+    /* COMO FUNCIONA */
     .howTop{
       display:flex;
       align-items:flex-end;
@@ -310,63 +305,59 @@
       line-height:1.65;
     }
 
+    /* quadrado externo removido */
     .howBoard{
       position: relative;
-      border-radius: 22px;
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.04);
-      padding: 28px;
-      box-shadow: 0 18px 44px rgba(0,0,0,.18);
-      min-height: 520px;
-      padding-top: 64px;
-      padding-bottom: 64px;
+      min-height: 560px;
+      padding: 18px 0 34px;
     }
 
-    .ringWrap{
-      width: 380px;
-      max-width: 100%;
-      margin: 0 auto;
-      border-radius: 0 !important;
-      border:none !important;
-      background: transparent !important;
-      padding: 0 !important;
-      box-shadow: none !important;
+    .centerRing{
+      position:absolute;
+      left:50%;
+      top:50%;
+      transform: translate(-50%, -50%);
+      z-index:1;
     }
+
     .ring{
-      width:100%;
-      aspect-ratio:1/1;
-      border-radius: 18px;
-      display:grid;
-      place-items:center;
+      width: 320px;
+      height: 320px;
       position:relative;
-      background:
-        radial-gradient(circle at 50% 50%, rgba(198,168,90,.08), transparent 55%),
-        radial-gradient(circle at 50% 50%, rgba(255,255,255,.10), transparent 62%);
     }
-    .ring svg{width:100%; height:100%;}
+    .ring svg{
+      width:100%;
+      height:100%;
+      display:block;
+    }
+
     .ringNum{
       position:absolute;
-      width:38px;height:38px;border-radius:12px;
-      background: rgba(11,37,34,.92);
+      width:38px;height:38px;
+      border-radius:12px;
+      background: rgba(11,37,34,.96);
       border:1px solid rgba(198,168,90,.35);
-      display:grid; place-items:center;
+      display:grid;
+      place-items:center;
       color:#fff;
       font-weight:900;
+      z-index:3;
+      box-shadow: 0 10px 24px rgba(0,0,0,.18);
     }
-    .n1{top:14%; left:50%; transform:translate(-50%,-50%);}
-    .n2{top:50%; right:13%; transform:translate(50%,-50%);}
-    .n3{bottom:13%; left:50%; transform:translate(-50%,50%);}
-    .n4{top:50%; left:13%; transform:translate(-50%,-50%);}
+    .n1{top:0; left:50%; transform:translate(-50%,-10%);}
+    .n2{top:50%; right:0; transform:translate(10%,-50%);}
+    .n3{bottom:0; left:50%; transform:translate(-50%,10%);}
+    .n4{top:50%; left:0; transform:translate(-10%,-50%);}
 
     .howCard{
       position:absolute;
-      width: 420px;
+      width: 330px;
       border-radius: 16px;
-      padding: 16px 16px;
+      padding: 16px 18px;
       border:1px solid rgba(255,255,255,.14);
       background: rgba(255,255,255,.05);
       box-shadow: 0 12px 26px rgba(0,0,0,.18);
-      z-index: 3;
+      z-index:2;
     }
     .howCard h3{
       margin:0 0 6px;
@@ -378,25 +369,15 @@
       margin:0;
       color: rgba(255,255,255,.86);
       line-height:1.55;
-      font-size:13.6px;
+      font-size:13.8px;
     }
 
-    /* posições: 1 em cima, 2 direita, 3 embaixo, 4 esquerda */
-    .pos1{top:10px !important; left:50%; transform:translateX(-50%) !important;}
-    .pos2{top:50%; right:22px; transform:translateY(-50%);}
-    .pos3{bottom:10px !important; left:50%; transform:translateX(-50%) !important;}
-    .pos4{top:50%; left:22px; transform:translateY(-50%);}
+    /* alinhamento corrigido */
+    .pos1{top:0; left:50%; transform:translateX(-50%);}
+    .pos2{top:50%; right:0; transform:translateY(-50%);}
+    .pos3{bottom:0; left:50%; transform:translateX(-50%);}
+    .pos4{top:50%; left:0; transform:translateY(-50%);}
 
-    /* deixa o círculo sempre central */
-    .centerRing{
-      position:absolute;
-      left:50%;
-      top:52% !important;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-    }
-
-    /* ===== FRASE (AJUSTADA: fundo dourado, letra branca, destaque verde, piscando, fonte maior) ===== */
     .quoteBar{
       margin-top: 26px;
       border-radius: 18px;
@@ -418,7 +399,7 @@
       100%{filter:brightness(1); transform:scale(1)}
     }
 
-    /* ===== BLOCO EMOCIONAL (branco) ===== */
+    /* BLOCO EMOCIONAL */
     .painCard{
       border-radius: var(--radius);
       border:1px solid rgba(11,37,34,.14);
@@ -449,7 +430,7 @@
     .painItem b{color: var(--green2)}
     .painItem .gold{color: var(--gold); font-weight:800;}
 
-    /* ===== PLANOS ===== */
+    /* PLANOS */
     .plansHead{
       display:flex;
       align-items:flex-end;
@@ -539,7 +520,7 @@
       animation: pulse 1.15s ease-in-out infinite;
     }
 
-    /* ===== Footer ===== */
+    /* FOOTER */
     footer{
       padding: 26px 0 40px;
       border-top:1px solid rgba(255,255,255,.10);
@@ -571,7 +552,7 @@
     .iconBtn:hover{transform: translateY(-1px); background: rgba(255,255,255,.10);}
     .iconBtn svg{width:18px;height:18px; fill: rgba(255,255,255,.90);}
 
-    /* ===== WhatsApp floating ===== */
+    /* WHATSAPP */
     .waFloat{
       position: fixed;
       right: 18px;
@@ -597,20 +578,30 @@
       90% { transform: translateX(0) rotate(0deg); }
     }
 
-    /* ===== Responsivo ===== */
+    /* RESPONSIVO */
     @media (max-width: 1100px){
       .heroGrid{grid-template-columns:1fr; gap:18px;}
       .heroImageFill{min-height:280px;}
       .grid2{grid-template-columns:1fr; }
       .planGrid{grid-template-columns:1fr; }
       .painGrid{grid-template-columns:1fr;}
-      .howBoard{min-height: 640px;}
-      .howCard{width: min(88vw, 420px}
-      .pos2{right: 50%; top: 18px; transform: translateX(50%);} /* empilha melhor */
-      .pos4{left: 50%; bottom: 18px; top: auto; transform: translateX(-50%);}
-      .pos1{top: 8px;}
-      .pos3{bottom: 8px;}
-      .centerRing{top:56%; left:50%;}
+      .howBoard{
+        display:grid;
+        gap:14px;
+        min-height:auto;
+        padding:0;
+      }
+      .centerRing,
+      .howCard{
+        position:static;
+        transform:none !important;
+        width:100%;
+      }
+      .ring{
+        width:320px;
+        max-width:100%;
+        margin:0 auto;
+      }
     }
     @media (max-width: 720px){
       .headerInner{flex-direction:column; align-items:flex-start}
@@ -623,9 +614,7 @@
       .section{padding:56px 0;}
       .heroTitle{font-size:38px}
       .whyText h2,.howTop h2,.plansHead h2{font-size:34px}
-      .howBoard{ min-height: 680px;}
       .quoteBar{font-size:20px;}
-      
     }
   </style>
 </head>
@@ -634,7 +623,6 @@
 
   <header>
     <div class="headerInner">
-
       <div class="brand">
         <div class="logoBox">
           <img src="logo-telluna.png" alt="Telluna">
@@ -654,15 +642,12 @@
           Agendar conversa
         </a>
       </nav>
-
     </div>
   </header>
 
-  <!-- HERO -->
   <section class="section bg-beige" id="inicio">
     <div class="wrap">
       <div class="heroGrid">
-
         <div class="card heroMain">
           <div class="kicker"><span class="dot"></span> Estrutura executiva para crescimento com previsibilidade</div>
 
@@ -690,16 +675,13 @@
         <div class="card heroImageCard">
           <div class="heroImageFill"></div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- POR QUE -->
   <section class="section bg-green" id="porque">
     <div class="wrap">
       <div class="grid2">
-
         <div class="whyPhoto">
           <img src="foto-porque.jpg" alt="Transparência e parceria">
         </div>
@@ -714,54 +696,35 @@
 
           <div class="checks">
             <div class="checkItem">
-              <div class="tick">
-                <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-              </div>
+              <div class="tick"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
               <span><b>Estruturamos metas trimestrais</b> com indicadores simples.</span>
             </div>
-
             <div class="checkItem">
-              <div class="tick">
-                <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-              </div>
+              <div class="tick"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
               <span><b>Criamos rotina de decisão</b> baseada em números reais.</span>
             </div>
-
             <div class="checkItem">
-              <div class="tick">
-                <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-              </div>
+              <div class="tick"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
               <span><b>Transformamos operação confusa</b> em gestão previsível.</span>
             </div>
-
             <div class="checkItem">
-              <div class="tick">
-                <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-              </div>
+              <div class="tick"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
               <span>Aplicável para qualquer setor — com adaptação ao seu momento.</span>
             </div>
-
             <div class="checkItem">
-              <div class="tick">
-                <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-              </div>
+              <div class="tick"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
               <span>Organização sem burocracia: clareza, controle e execução.</span>
             </div>
-
             <div class="checkItem">
-              <div class="tick">
-                <svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>
-              </div>
+              <div class="tick"><svg viewBox="0 0 24 24"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
               <span>Atuação remota com rotina leve e acompanhamento consistente.</span>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
-  <!-- COMO FUNCIONA (corrigido) -->
   <section class="section bg-green" id="como">
     <div class="wrap">
       <div class="howTop">
@@ -772,58 +735,51 @@
       </div>
 
       <div class="howBoard">
-        <!-- círculo central -->
         <div class="centerRing">
-          <div class="ringWrap">
-            <div class="ring">
-              <svg viewBox="0 0 200 200" aria-hidden="true">
-                <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(255,255,255,.40)" stroke-width="6"/>
-                <circle cx="100" cy="100" r="52" fill="none" stroke="rgba(198,168,90,.30)" stroke-width="6"/>
-                <circle cx="100" cy="100" r="18" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.20)" stroke-width="2"/>
-              </svg>
-              <div class="ringNum n1">1</div>
-              <div class="ringNum n2">2</div>
-              <div class="ringNum n3">3</div>
-              <div class="ringNum n4">4</div>
-            </div>
+          <div class="ring">
+            <svg viewBox="0 0 200 200" aria-hidden="true">
+              <circle cx="100" cy="100" r="70" fill="none" stroke="rgba(255,255,255,.40)" stroke-width="6"/>
+              <circle cx="100" cy="100" r="52" fill="none" stroke="rgba(198,168,90,.30)" stroke-width="6"/>
+              <circle cx="100" cy="100" r="18" fill="rgba(255,255,255,.06)" stroke="rgba(255,255,255,.20)" stroke-width="2"/>
+            </svg>
+            <div class="ringNum n1">1</div>
+            <div class="ringNum n2">2</div>
+            <div class="ringNum n3">3</div>
+            <div class="ringNum n4">4</div>
           </div>
         </div>
 
-        <!-- cards na direção certa -->
         <div class="howCard pos1">
-          <h3>Diagnóstico</h3>
+          <h3>1. Diagnóstico</h3>
           <p>Levantamos cenário, gargalos e riscos. Identificamos o que impede previsibilidade hoje.</p>
         </div>
 
         <div class="howCard pos2">
-          <h3>Plano de ação</h3>
+          <h3>2. Plano de ação</h3>
           <p>Definimos prioridades, metas e responsáveis — com foco no que destrava resultado.</p>
         </div>
 
         <div class="howCard pos3">
-          <h3>Implantação</h3>
+          <h3>3. Implantação</h3>
           <p>Acompanhamos a execução, ajustamos o plano e colocamos a estrutura para rodar sem travar a operação.</p>
         </div>
 
         <div class="howCard pos4">
-          <h3>Evolução contínua</h3>
+          <h3>4. Evolução contínua</h3>
           <p>Consolidamos rotina e indicadores para manter consistência e melhorar decisões ao longo do tempo.</p>
         </div>
       </div>
 
-      <!-- FRASE (corrigida) -->
       <div class="quoteBar">
         A Telluna não entrega relatórios. <span class="green">Entrega rotina estruturada de decisão.</span>
       </div>
     </div>
   </section>
 
-  <!-- BLOCO EMOCIONAL (branco) -->
   <section class="section bg-white" id="dor">
     <div class="wrap">
       <div class="painCard">
         <h3 class="painTitle">Se você não fizer isso hoje, o que sua empresa sofre?</h3>
-
         <div class="painGrid">
           <div class="painItem">• Cresce no esforço, mas <b>não vira lucro</b> porque tudo se perde na desorganização.</div>
           <div class="painItem">• Depende do dono para tudo e <span class="gold">trava</span> quando a operação aumenta.</div>
@@ -834,7 +790,6 @@
     </div>
   </section>
 
-  <!-- PLANOS -->
   <section class="section bg-green" id="planos">
     <div class="wrap">
       <div class="plansHead">
@@ -848,10 +803,7 @@
         <div class="plan">
           <div class="planTag">ESSENCIAL</div>
           <h3>Organização</h3>
-          <p>
-            Para empresas que precisam colocar ordem na rotina: clareza de prioridades, definição do que importa
-            e um passo a passo objetivo para melhorar decisões sem burocracia.
-          </p>
+          <p>Para empresas que precisam colocar ordem na rotina: clareza de prioridades, definição do que importa e um passo a passo objetivo para melhorar decisões sem burocracia.</p>
           <div class="planFoot">
             <b>Investimento sob consulta</b>
             <span>até 60 dias</span>
@@ -861,10 +813,7 @@
         <div class="plan">
           <div class="planTag">ESTRATÉGICO</div>
           <h3>Estruturação</h3>
-          <p>
-            Para formalizar processos essenciais, criar indicadores simples e alinhar a equipe.
-            Ideal para crescer com previsibilidade, reduzir retrabalho e transformar rotina em consistência.
-          </p>
+          <p>Para formalizar processos essenciais, criar indicadores simples e alinhar a equipe. Ideal para crescer com previsibilidade, reduzir retrabalho e transformar rotina em consistência.</p>
           <div class="planFoot">
             <b>Investimento sob consulta</b>
             <span>até 90 dias</span>
@@ -874,10 +823,7 @@
         <div class="plan">
           <div class="planTag">RECORRENTE</div>
           <h3>Acompanhamento</h3>
-          <p>
-            Suporte contínuo para manter evolução no ritmo certo. Revisamos metas, apoiamos decisões e ajustamos a execução.
-            Um braço consultivo para o gestor não voltar ao improviso.
-          </p>
+          <p>Suporte contínuo para manter evolução no ritmo certo. Revisamos metas, apoiamos decisões e ajustamos a execução. Um braço consultivo para o gestor não voltar ao improviso.</p>
           <div class="planFoot">
             <b>Investimento sob consulta</b>
             <span>mín. 6 meses</span>
@@ -912,7 +858,6 @@
     </div>
   </section>
 
-  <!-- WhatsApp flutuante -->
   <a class="waFloat" href="https://wa.me/5516993735556" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 32 32"><path d="M19.11 17.44c-.26-.13-1.54-.76-1.78-.85-.24-.09-.41-.13-.58.13-.17.26-.67.85-.82 1.02-.15.17-.3.2-.56.07-.26-.13-1.09-.4-2.07-1.28-.77-.68-1.28-1.52-1.43-1.78-.15-.26-.02-.4.11-.53.11-.11.26-.3.39-.45.13-.15.17-.26.26-.43.09-.17.04-.32-.02-.45-.06-.13-.58-1.39-.79-1.91-.21-.5-.42-.43-.58-.44h-.5c-.17 0-.45.06-.69.32-.24.26-.9.88-.9 2.15s.92 2.49 1.05 2.66c.13.17 1.81 2.76 4.39 3.87.61.26 1.09.41 1.46.53.61.19 1.17.16 1.61.1.49-.07 1.54-.63 1.76-1.24.22-.61.22-1.13.15-1.24-.06-.11-.24-.17-.5-.3zM16.02 2.67C8.67 2.67 2.7 8.63 2.7 15.98c0 2.34.61 4.53 1.68 6.43L3 29.33l7.09-1.86c1.84 1 3.95 1.57 6.05 1.57 7.35 0 13.31-5.97 13.31-13.31S23.37 2.67 16.02 2.67zm0 23.02c-1.95 0-3.86-.52-5.52-1.5l-.4-.23-4.21 1.11 1.12-4.1-.26-.42a10.91 10.91 0 0 1-1.68-5.88c0-6.03 4.9-10.93 10.95-10.93 6.03 0 10.93 4.9 10.93 10.93 0 6.05-4.9 10.95-10.93 10.95z"/></svg>
   </a>
