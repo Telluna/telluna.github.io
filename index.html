@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Telluna | Consultoria Empresarial Estratégica</title>
 
 <style>
@@ -14,30 +17,50 @@ background:#f3efe6;
 color:#0b2522;
 }
 
+/* HEADER */
+
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 60px;
+padding:25px 60px;
 background:#f3efe6;
 border-bottom:1px solid rgba(0,0,0,0.05);
 }
 
+/* LOGO */
+
 .logo{
 display:flex;
 align-items:center;
-gap:15px;
+gap:20px;
 }
 
 .logo img{
-width:70px;
+width:90px;
 }
 
-.logo h1{
-margin:0;
-font-size:36px;
-letter-spacing:2px;
+/* TITULO RESTAURADO */
+
+.logo-text{
+display:flex;
+flex-direction:column;
 }
+
+.logo-text h1{
+margin:0;
+font-size:78px;
+letter-spacing:2px;
+color:#0b2522;
+}
+
+.logo-text span{
+font-size:20px;
+color:#6a6a6a;
+margin-top:5px;
+}
+
+/* MENU */
 
 nav{
 display:flex;
@@ -48,8 +71,8 @@ gap:15px;
 nav a{
 text-decoration:none;
 color:#0b2522;
-padding:10px 16px;
-border-radius:10px;
+padding:12px 18px;
+border-radius:12px;
 border:1px solid rgba(0,0,0,0.08);
 font-weight:600;
 }
@@ -59,14 +82,17 @@ background:#c6a85a;
 color:#0b2522;
 border:none;
 font-weight:700;
+padding:14px 26px;
 }
+
+/* HERO */
 
 .hero{
 display:grid;
 grid-template-columns:1fr 1fr;
 padding:80px 60px;
 align-items:center;
-gap:40px;
+gap:50px;
 }
 
 .hero h2{
@@ -101,6 +127,8 @@ width:100%;
 border-radius:20px;
 }
 
+/* SEÇÕES */
+
 .section{
 padding:80px 60px;
 }
@@ -129,6 +157,8 @@ margin-top:0;
 color:#c6a85a;
 }
 
+/* FOOTER */
+
 footer{
 background:#0b2522;
 color:white;
@@ -145,6 +175,8 @@ text-decoration:none;
 margin-left:15px;
 }
 
+/* RESPONSIVO */
+
 @media(max-width:900px){
 
 .hero{
@@ -160,9 +192,14 @@ flex-direction:column;
 gap:20px;
 }
 
+.logo-text h1{
+font-size:48px;
+}
+
 }
 
 </style>
+
 </head>
 
 <body>
@@ -170,8 +207,14 @@ gap:20px;
 <header>
 
 <div class="logo">
+
 <img src="logo-telluna.png">
+
+<div class="logo-text">
 <h1>TELLUNA</h1>
+<span>Consultoria Empresarial Estratégica</span>
+</div>
+
 </div>
 
 <nav>
@@ -179,8 +222,9 @@ gap:20px;
 <a href="#como">Como funciona</a>
 <a href="#planos">Planos</a>
 
-<!-- BOTÃO ALTERADO -->
-<a href="diagnostico.html" class="primary">Faça seu diagnóstico</a>
+<a href="diagnostico.html" class="primary">
+Faça seu diagnóstico
+</a>
 
 </nav>
 
@@ -201,7 +245,6 @@ A Telluna organiza a gestão da empresa, estrutura processos e cria previsibilid
 para o crescimento. Menos improviso, mais decisão estratégica.
 </p>
 
-<!-- BOTÃO ALTERADO -->
 <a href="diagnostico.html">
 <button>Faça seu diagnóstico</button>
 </a>
