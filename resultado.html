@@ -1,75 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resultado do Diagnóstico | Telluna</title>
+
+<style>
+:root{
+--green:#0F2E2A;
+--green2:#0B2522;
+--gold:#C6A85A;
+--text:#F5F1E8;
+--muted:rgba(255,255,255,.78);
+--line:rgba(255,255,255,.14);
+--radius:22px;
+--shadow:0 18px 40px rgba(0,0,0,.18);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:
+radial-gradient(900px 520px at 18% 10%, rgba(198,168,90,.14), transparent 60%),
+linear-gradient(180deg, var(--green), var(--green2));
+color:var(--text);
+min-height:100vh;
+}
+
+.page{
+max-width:900px;
+margin:0 auto;
+padding:60px 20px;
+}
+
+.card{
+background:rgba(255,255,255,.07);
+border:1px solid var(--line);
+border-radius:var(--radius);
+box-shadow:var(--shadow);
+padding:32px;
+margin-bottom:24px;
+}
+
+h1{
+font-size:38px;
+margin-bottom:12px;
+}
+
+h2{
+font-size:24px;
+margin-bottom:10px;
+}
+
+p{
+line-height:1.7;
+color:var(--muted);
+}
+
+.score{
+font-size:52px;
+font-weight:900;
+color:var(--gold);
+margin:20px 0;
+}
+
+.cta{
+display:flex;
+justify-content:center;
+margin-top:30px;
+}
+
+.cta a{
+padding:18px 28px;
+border-radius:18px;
+font-size:18px;
+font-weight:900;
+text-decoration:none;
+background:linear-gradient(135deg, rgba(198,168,90,.98), rgba(198,168,90,.74));
+color:var(--green2);
+box-shadow:0 22px 64px rgba(198,168,90,.22);
+animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+0%{transform:scale(1);}
+50%{transform:scale(1.05);}
+100%{transform:scale(1);}
+}
+
+.tag{
+display:inline-block;
+padding:8px 14px;
+border-radius:12px;
+background:rgba(198,168,90,.18);
+color:#fff;
+font-weight:700;
+margin-bottom:10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="page">
+
+<div class="card">
+<div class="tag">Seu diagnóstico</div>
+<h1>Resultado da sua empresa</h1>
+<div class="score" id="score">0</div>
+<p id="stageText"></p>
+</div>
+
+<div class="card">
+<h2>O que isso significa na prática</h2>
+<p id="analysis"></p>
+</div>
+
+<div class="card">
+<h2>O próximo passo</h2>
+<p id="nextStep"></p>
+
+<div class="cta">
+<a href="https://wa.me/5516993735556" target="_blank">
+Solicitar consultoria
+</a>
+</div>
+</div>
+
+</div>
+
 <script>
+
+// Captura parâmetros da URL
 const params = new URLSearchParams(window.location.search);
 
-// 🔒 VALIDAÇÃO
-if (!params.has("q1")) {
-  document.body.innerHTML = "<h1 style='color:white;text-align:center'>Acesso inválido</h1>";
-  throw new Error("Sem respostas");
+// Soma todas respostas (q1 até q15)
+let total = 0;
+for(let i=1; i<=15; i++){
+    total += Number(params.get("q"+i)) || 0;
 }
 
-// 📊 RESPOSTAS
-const answers = [];
-for (let i = 1; i <= 15; i++) {
-  answers.push(Number(params.get(`q${i}`) || 0));
+// Exibe pontuação
+document.getElementById("score").innerText = total + " pontos";
+
+// Classificação estratégica
+let stage = "";
+let analysis = "";
+let next = "";
+
+if(total <= 20){
+    stage = "Sua empresa está em estágio de improviso operacional.";
+    analysis = "Hoje o crescimento depende mais de esforço do que de estrutura. Isso gera retrabalho, desgaste e decisões inseguras. O risco aqui não é só crescer pouco — é crescer desorganizado e perder dinheiro sem perceber.";
+    next = "O foco agora é criar base: organizar processos, definir prioridades e tirar o negócio do improviso.";
+}
+else if(total <= 40){
+    stage = "Sua empresa está em organização inicial.";
+    analysis = "Já existe alguma estrutura, mas ainda há inconsistência. Processos não são seguidos, decisões variam e o crescimento começa a pressionar a operação.";
+    next = "O próximo passo é consolidar rotinas, criar indicadores simples e alinhar a equipe.";
+}
+else if(total <= 60){
+    stage = "Sua empresa está em estruturação.";
+    analysis = "Você já tem base de gestão, mas ainda não totalmente previsível. Existem boas práticas, porém sem consistência suficiente para escalar com segurança.";
+    next = "Aqui o foco é transformar gestão em rotina previsível e reduzir dependência do dono.";
+}
+else{
+    stage = "Sua empresa está em nível avançado de gestão.";
+    analysis = "Existe estrutura clara, indicadores e tomada de decisão consistente. O desafio agora é escalar sem perder controle.";
+    next = "O caminho é otimizar, ganhar eficiência e acelerar crescimento com estratégia.";
 }
 
-const total = answers.reduce((a,b)=>a+b,0);
+// Inserir textos
+document.getElementById("stageText").innerText = stage;
+document.getElementById("analysis").innerText = analysis;
+document.getElementById("nextStep").innerText = next;
 
-// 👤 DADOS DO USUÁRIO
-const nome = params.get("nome") || "Não informado";
-const email = params.get("email") || "Não informado";
-const telefone = params.get("telefone") || "Não informado";
-const empresa = params.get("empresa") || "Não informado";
-
-// 🎯 STAGE
-function getStage(score){
-  if(score <= 20) return "Empresa desorganizada";
-  if(score <= 40) return "Empresa em estruturação";
-  return "Empresa estruturada";
-}
-
-// 📦 PLANO
-function getPlan(score){
-  if(score <= 20) return "Plano Essencial";
-  if(score <= 40) return "Plano Estratégico";
-  return "Plano Acompanhamento";
-}
-
-// 🧠 RESULTADO
-const stage = getStage(total);
-const plan = getPlan(total);
-
-// UI
-document.getElementById("scoreBadge").textContent = `Pontuação: ${total}/60`;
-document.getElementById("stageTitle").textContent = stage;
-document.getElementById("planTitle").textContent = plan;
-
-// 📩 ENVIO REAL
-async function enviar() {
-  const data = {
-    access_key: "3e2ac5c8-6daa-476d-bd65-72e5b79cb947",
-    subject: "Novo diagnóstico Telluna",
-    name: nome,
-    email: email,
-    message: `
-Nome: ${nome}
-Empresa: ${empresa}
-Telefone: ${telefone}
-
-Pontuação: ${total}
-Estágio: ${stage}
-Plano: ${plan}
-
-Respostas: ${answers.join(",")}
-    `
-  };
-
-  await fetch("https://api.web3forms.com/submit", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(data)
-  });
-}
-
-enviar();
 </script>
+
+</body>
+</html>
